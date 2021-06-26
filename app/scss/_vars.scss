@@ -1,0 +1,56 @@
+$default: #687683;
+$accent: #fff;
+$title: #2C3E50;
+$bg: #2F3794;
+
+%SourceSansPro-Bold {
+  font-family: "SourceSansPro-Bold", sans-serif;
+  font-weight: 700;
+}
+
+%SourceSansPro-SemiBold {
+  font-family: "SourceSansPro-SemiBold", sans-serif;
+  font-weight: 600;
+}
+
+%SourceSansPro-Regular {
+  font-family: "SourceSansPro-Regular", sans-serif;
+  font-weight: 400;
+}
+%LucidaGrande-Regular {
+  font-family: "LucidaGrande-Regular", sans-serif;
+  font-weight: 400;
+}
+
+%bg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
+}
+
+@mixin laptop-L {
+  @media (max-width: 1200px) { @content; }
+}
+@mixin laptop {
+  @media (max-width: 992px) { @content; }
+}
+@mixin tablet-L {
+  @media (max-width: 768px) { @content; }
+}
+@mixin tablet {
+  @media (max-width: 630px) { @content; }
+}
+@mixin portrait-phones {
+  @media (max-width: 530px) { @content; }
+}
+@mixin mobile-L {
+  @media (max-width: 425px) { @content; }
+}
