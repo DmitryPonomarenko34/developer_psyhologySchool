@@ -1,0 +1,35 @@
+.header{
+  padding: 8px 0;
+  background-color: $accent;
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo{
+  }
+  &__links{
+  }
+  &__link{
+    color: $bg;
+    margin-right: 30px;
+  }
+  &__link-accent{
+    @extend %link;
+  }
+}
+
+.menu{
+  &__list{
+    display: flex;
+  }
+  &__list-item{
+    +.menu__list-item{
+      margin-left: 39px;
+    }
+  }
+  &__list-link{
+    color: $title;
+    @extend %SourceSansPro-SemiBold;
+  }
+}

@@ -1,0 +1,91 @@
+.first {
+  padding: 100px 0;
+  &__container-fluid{
+    background-position: right bottom;
+    background-size: auto 90%;
+    background-repeat: no-repeat;
+  }
+  &__inner{
+    position: relative;
+  }
+  &__title{
+    text-align: start;
+    margin-bottom: 20px;
+    max-width: 600px;
+    line-height: 64px;
+    @extend %SourceSansPro-SemiBold;
+    @extend %title;
+  }
+  &__text{
+    margin-bottom: 60px;
+    max-width: 480px;
+  }
+  &__box{
+    display: flex;
+    justify-content: space-between;
+    max-width: 480px;
+    margin-bottom: 50px;
+  }
+  &__price{
+    font-size: 30px;
+    @extend %SourceSansPro-SemiBold;
+    color: $title;
+  }
+  &__link{
+    position: relative;
+    padding-left: 57px;
+    @extend %link;
+    &:before{
+      content: '';
+      position: absolute;
+      top: 14px;
+      width: 17px;
+      height: 21px;
+      left: 30px;
+      background-repeat: no-repeat;
+      background-image: url('../images/icons/sprite.svg#basket');
+    }
+  }
+  &__info{
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
+  }
+  &__info-text{
+  }
+}
+.countdown_dashboard{
+  display: flex;
+}
+
+.dash{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.digit{
+  font-size: 30px;
+  line-height: 40px;
+  color: $title;
+  @extend %SourceSansPro-Bold;
+}
+
+.play{
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: $accent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  svg{
+    margin-left: 1px;
+    width: 13px;
+    height: 16px;
+  }
+}

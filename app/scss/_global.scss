@@ -8,6 +8,12 @@ body {
   line-height: 24px;
   color: $default;
   @extend %SourceSansPro-Regular;
+  background-color: #f2f2f2;
+}
+
+a{
+  font-size: 15px;
+  @extend %SourceSansPro-SemiBold;
 }
 
 .main {
@@ -20,6 +26,11 @@ body {
   overflow-x: hidden;
   width: 100%;
   min-height: 100%;
+}
+
+.container-fluid{
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 .container-add {

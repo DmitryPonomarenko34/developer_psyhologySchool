@@ -22,6 +22,21 @@ $bg: #2F3794;
   font-weight: 400;
 }
 
+%title{
+  font-size: 48px;
+  line-height: 40px;
+  color: $title;
+  text-align: center;
+}
+
+%link{
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 24px;
+  color: $accent;
+  background-color: $bg;
+}
+
 %bg {
   background-position: center;
   background-size: cover;
