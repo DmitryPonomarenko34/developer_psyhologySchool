@@ -27,6 +27,7 @@ $bg: #2F3794;
   line-height: 40px;
   color: $title;
   text-align: center;
+  @extend %SourceSansPro-Regular;
 }
 
 %link{

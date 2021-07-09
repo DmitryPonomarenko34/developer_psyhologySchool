@@ -1,0 +1,56 @@
+.feedback {
+  &__inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $accent;
+    padding: 60px 40px;
+    border-radius: 20px;
+  }
+  &__info{
+    max-width: 47%;
+  }
+  &__name{
+    display: block;
+    margin-bottom: 10px;
+    font-size: 30px;
+    line-height: 40px;
+    color: $title;
+    @extend %SourceSansPro-SemiBold;
+  }
+  &__pos{
+    display: block;
+    color: #797a8a;
+    margin-bottom: 30px;
+  }
+  &__text{
+    position: relative;
+    max-width: 519px;
+    color: $title;
+    &::before,
+    &::after{
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 25px;
+      left: -15px;
+      top: -7px;
+      background-repeat: no-repeat;
+    }
+    &::before{
+      background-image: url('../images/icons/sprite.svg#quote');
+    }
+    &::after{
+      top: auto;
+      left: auto;
+      right: 3px;
+      bottom: 0px;
+      background-image: url('../images/icons/sprite.svg#quote-rotate');
+    }
+  }
+  &__video{
+    position: relative;
+    max-width: 50%;
+  }
+}
+

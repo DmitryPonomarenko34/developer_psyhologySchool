@@ -1,5 +1,6 @@
 .first {
-  padding: 100px 0;
+  background-color: rgba(47, 55, 148, 0.15);
+
   &__container-fluid{
     background-position: right bottom;
     background-size: auto 90%;
@@ -7,14 +8,15 @@
   }
   &__inner{
     position: relative;
+    padding: 100px 0;
   }
   &__title{
-    text-align: start;
     margin-bottom: 20px;
-    max-width: 600px;
+    max-width: 605px;
+    font-size: 48px;
     line-height: 64px;
     @extend %SourceSansPro-SemiBold;
-    @extend %title;
+    color: $title;
   }
   &__text{
     margin-bottom: 60px;
@@ -42,7 +44,7 @@
       width: 17px;
       height: 21px;
       left: 30px;
-      background-repeat: no-repeat;
+      @extend %bg;
       background-image: url('../images/icons/sprite.svg#basket');
     }
   }

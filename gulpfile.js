@@ -14,12 +14,12 @@ const imagemin = require('gulp-imagemin');
 const imageminPngquant = require('imagemin-pngquant');
 const imageminWebp = require('imagemin-webp');
 const del = require('del');
-// const webp = require('gulp-webp');
 const webphtml = require('gulp-webp-html');
 const changed = require('gulp-changed');
 const fileinclude = require('gulp-file-include');
 const debug = require('gulp-debug');
 const svgSprite = require('gulp-svg-sprite');
+const { svgo } = require('gulp-imagemin');
 const browserSync = require('browser-sync').create();
 
 function browsersync() {
@@ -95,13 +95,38 @@ function imagesWebp() {
 
 
 function spriteSvg() {
-  return src(['app/images/icons/*.svg', '!app/images/icons/sprite.svg'])
+  return src(['app/images/icons/*.svg'])
     .pipe(svgSprite({
        mode: {
         stack: {
           sprite: "../sprite.svg" 
-        }
-      }
+        },
+      },
+      shape: {
+        transform: [
+          {
+            svgo: {
+              plugins: [
+                {
+                  inlineStyles: true
+                },
+                {
+                  removeViewBox: false
+                },
+                {
+                  removeDoctype: true
+                },
+                {
+                  removeXMLProcInst: true
+                },
+                {
+                  removeXMLNS: true
+                },
+              ],
+            },
+          },
+        ],
+      },    
     }))
     .pipe(debug({title: 'sprite:'}))
     .pipe(dest('app/images/icons'))
