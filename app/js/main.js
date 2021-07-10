@@ -1,4 +1,14 @@
 $(function(){
+	$('.course-slider').slick({
+		slidesToShow: 2,
+		dots: true,
+		prevArrow: 
+		'<button type="button" class="slick-prev"><svg width="21" height="15" viewBox="0 0 21 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.22103 14.441L7.92803 13.734L1.91503 7.72104L20.707 7.72104V6.72004L1.91503 6.72004L7.92803 0.70704L7.22103 4.00543e-05L3.05176e-05 7.22004L7.22103 14.441Z" fill="#2F3794"/></svg></button>',
+		nextArrow: '<button type="button" class="slick-next"><svg width="21" height="15" viewBox="0 0 21 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.486 0L12.779 0.707L18.792 6.72H0V7.721H18.792L12.779 13.734L13.486 14.441L20.707 7.221L13.486 0Z" fill="#2F3794"/></svg></button>',
+		appendArrows: $('.slider-control'),
+		appendDots: $('.slider-control'),
+	});
+
   $.fn.countDown = function (options) {
 
 		config = {};

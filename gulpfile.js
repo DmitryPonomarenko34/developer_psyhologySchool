@@ -49,6 +49,7 @@ function scripts() {
   return src([
       'node_modules/jquery/dist/jquery.js',
       'node_modules/@fancyapps/ui/dist/fancybox.umd.js',
+      'node_modules/slick-carousel/slick/slick.js',
       'app/js/main.js'
     ])
     .pipe(concat('main.min.js'))
@@ -72,8 +73,8 @@ function images() {
   return src(['app/images/**/*.{png,jpg}', '!app/images/**/*.webp'])
   .pipe(changed('app/images/**/*.{png,jpg}'))
   .pipe(imagemin([
-    imagemin.mozjpeg({ quality: 60 }),
-    imageminPngquant({ quality: [0.5, 0.6] }),
+    imagemin.mozjpeg({ quality: 70 }),
+    imageminPngquant({ quality: [0.6, 0.7] }),
     imagemin.svgo(),
   ],
   ))
@@ -84,7 +85,7 @@ function imagesWebp() {
   return src('app/images/**/*.{png,jpg}')
   .pipe(changed('app/images', {extension: '.webp'}))
   .pipe(imagemin([
-    imageminWebp({quality: 55}),
+    imageminWebp({quality: 70}),
   ]))
   .pipe(rename({
     extname: ".webp"

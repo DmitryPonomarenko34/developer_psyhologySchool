@@ -3,7 +3,7 @@
 
   &__container-fluid{
     background-position: right bottom;
-    background-size: auto 90%;
+    background-size: 50%;
     background-repeat: no-repeat;
   }
   &__inner{
@@ -23,11 +23,22 @@
     max-width: 480px;
   }
   &__box{
-    display: flex;
-    justify-content: space-between;
     max-width: 480px;
     margin-bottom: 50px;
   }
+  &__info{
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
+  }
+  &__info-text{
+  }
+}
+
+.info-box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   &__price{
     font-size: 30px;
     @extend %SourceSansPro-SemiBold;
@@ -47,13 +58,6 @@
       @extend %bg;
       background-image: url('../images/icons/sprite.svg#basket');
     }
-  }
-  &__info{
-    display: flex;
-    justify-content: space-between;
-    max-width: 500px;
-  }
-  &__info-text{
   }
 }
 .countdown_dashboard{
