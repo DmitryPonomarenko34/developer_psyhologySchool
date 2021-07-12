@@ -38,6 +38,24 @@ $bg: #2F3794;
   background-color: $bg;
 }
 
+%accent-link{
+  position: relative;
+  width: fit-content;
+  padding-right: 37px;
+  color: $title;
+  @extend %SourceSansPro-SemiBold;
+  &::before{
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 0;
+    width: 21px;
+    height: 15px;
+    background-repeat: no-repeat;
+    background-image: url('../images/icons/sprite.svg#arrow-link');
+  }
+}
+
 %bg {
   background-position: center center;
   background-size: cover;

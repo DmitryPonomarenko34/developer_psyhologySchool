@@ -25,20 +25,8 @@
     }
   }
   &__slider-link{
-    position: relative;
     margin-bottom: 11px;
-    padding-right: 20px;
-    color: $title;
-    &::before{
-      content: '';
-      position: absolute;
-      top: 3px;
-      right: 0;
-      width: 21px;
-      height: 15px;
-      background-repeat: no-repeat;
-      background-image: url('../images/icons/sprite.svg#arrow-link');
-    }
+    @extend %accent-link;
   }
   &__slider-info{
     display: flex;
