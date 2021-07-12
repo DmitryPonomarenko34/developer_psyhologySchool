@@ -1,7 +1,6 @@
 .webinars{
   padding: 80px 0;
   &__title{
-    margin-bottom: 40px;
     @extend %title;
   }
   &__slider{
@@ -12,6 +11,7 @@
   }
   &__slider-imgbox{
     flex: 1 1 auto;
+    margin-bottom: 10px;
   }
   &__slider-box{
     max-width: 45%;
@@ -20,6 +20,7 @@
     flex-direction: column;
     order: -1;
     img{
+      max-width: 195px;
       border-radius: 20px;
     }
   }
@@ -40,7 +41,12 @@
     }
   }
   &__slider-info{
+    display: flex;
+    flex-direction: column;
     max-width: 57%;
     padding: 0;
+  }
+  &__slider-text{
+    flex: 1 1 auto;
   }
 }

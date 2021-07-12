@@ -1,12 +1,11 @@
 .course{
   padding: 80px 0;
   &__title{
-    margin-bottom: 40px;
     @extend %title;
   }
 }
 
-.course-slider{
+.slider{
   margin: 0 -10px;
   &__box{
     padding: 0 10px;
@@ -88,7 +87,7 @@
           opacity: 1;
           visibility: visible;
         }
-        .course-slider__link-text{
+        .slider__link-text{
           transform: translate(-50%,-50%);
           transition: ease transform 0.3s;
         }

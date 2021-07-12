@@ -1,5 +1,5 @@
 $(function(){
-	$('.course-slider').each(function(){
+	$('.slider').each(function(){
 		$(this).slick({
 			slidesToShow: 2,
 			slidesToScroll: 1,

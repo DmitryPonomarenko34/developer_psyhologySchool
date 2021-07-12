@@ -1,0 +1,43 @@
+.reviews {
+  padding: 80px 0;
+  &__title {
+    @extend %title;
+  }
+}
+
+.reviews-slider {
+  &__item {
+    background-color: $accent;
+    border-radius: 20px;
+    padding: 40px 40px 60px 40px;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  &__img{
+    flex: none;
+    margin-right: 40px;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+  }
+
+  &__name {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 30px;
+    line-height: 40px;
+    color: $title;
+    @extend %SourceSansPro-SemiBold;
+  }
+
+  &__pos {
+    display: block;
+  }
+}
+.feedback-text {
+}

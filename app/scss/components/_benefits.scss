@@ -1,7 +1,7 @@
 .benefits {
   padding: 80px 0 85px;
   &__title{
-    margin-bottom: 20px;
+    text-align: center;
     @extend %title;
   }
   &__inner{
