@@ -1,0 +1,45 @@
+.footer {
+  padding-top: 80px;
+  background-color: #797b82;  
+  &__top{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 80px;
+  }
+  &__item{
+    width: 100%;
+    max-width: 33.333%;
+  }
+  &__title{
+    @extend %SourceSansPro-SemiBold;
+    font-size: 16px;
+    line-height: 16px;
+    margin-bottom: 30px;
+    color: $accent;
+    opacity: 0.5;
+  }
+  &__list{
+  }
+  &__list-item{
+    margin-bottom: 15px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  &__list-link{
+    color: $accent;
+  }
+  &__copy{
+    padding: 17px 0;
+    background-color: rgba(0, 0, 0, 0.21)
+  }
+  &__copy-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__text{
+    color: $accent;
+    opacity: 0.5;
+  }
+}
