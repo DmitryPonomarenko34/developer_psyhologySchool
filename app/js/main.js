@@ -13,7 +13,11 @@ $(function(){
 		});
 	})
 
-	
+	$('.program-accordion__info').on('click', function(){
+		$(this).next().slideToggle();
+		$(this).toggleClass('program-accordion__info--active');
+	});
+
   $.fn.countDown = function (options) {
 
 		config = {};
