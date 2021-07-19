@@ -52,7 +52,7 @@ $bg: #2F3794;
     width: 21px;
     height: 15px;
     background-repeat: no-repeat;
-    background-image: url('../images/icons/sprite.svg#arrow-link');
+    background-image: url('../images/icons/multi/spriteMulti.svg#arrow-link');
   }
 }
 
@@ -75,6 +75,9 @@ $bg: #2F3794;
 }
 @mixin laptop {
   @media (max-width: 992px) { @content; }
+}
+@mixin laptop-touch {
+  @media (min-width: 992px) { @content; }
 }
 @mixin tablet-L {
   @media (max-width: 768px) { @content; }

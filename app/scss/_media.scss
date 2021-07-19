@@ -1,0 +1,101 @@
+@include laptop-touch{
+  %link{
+    transition: ease background-color 0.3s;
+    &:hover{
+      background-color: $title;
+      transition: ease background-color 0.3s;
+    }
+  }
+  .play{
+    transition: ease background-color 0.3s;
+    &:hover{
+      background-color: $title;
+      transition: ease background-color 0.3s;
+      svg{
+        fill: $accent;
+        transition: ease fill 0.3s;
+      }
+    }
+  }
+  .menu{
+    &__list-link{
+      &:hover{
+        color: $bg;
+      }
+    }
+  }
+  .program-accordion{
+    &__info{
+      &:hover{
+        .program-accordion__arrow{
+          background-color: #e1e1ff;
+        }
+      }
+    }
+  }
+  .slider-control{
+    .slick-arrow{
+      transition: ease background-color 0.3s;
+      &:hover{
+        background-color: $title;
+        transition: ease background-color 0.3s;
+        svg{
+          path{
+            fill: $accent;
+            transition: ease fill 0.3s;
+          }
+        }
+      }
+    }
+    .slick-dots button{
+      &:hover{
+        background-color: $bg;
+      }
+    }
+    .slick-disabled{
+      pointer-events: none;
+    }
+  }
+  .about__link,
+  .blog__item-link{
+    transition: ease 0.3s color;
+    &:hover{
+      color: $bg;
+      transition: ease 0.3s color;
+      &::before{
+        background-image: url('../images/icons/multi/arrow-link--accent.svg');
+      }
+    }
+  }
+  .blog{
+    &__article-link,
+    &__boxlink{
+      img{
+        transition: ease transform 0.4s;
+      }
+      &:hover{
+        img{
+          transform: scale(1.1);
+          transition: ease transform 0.4s;
+        }
+      }
+    }
+    &__link{
+      transition: ease background-color 0.3s, ease color 0.3s;
+      &:hover{
+        background-color: $bg;
+        color: $accent;
+        transition: ease background-color 0.3s, ease color 0.3s;
+      }
+    }
+  }
+  .footer{
+    &__list-link{
+      transition: ease color 0.3s;
+      &:hover{
+        color: $title;
+        transition: ease color 0.3s;
+      }
+    }
+  }
+}

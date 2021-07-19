@@ -19,7 +19,6 @@ const changed = require('gulp-changed');
 const fileinclude = require('gulp-file-include');
 const debug = require('gulp-debug');
 const svgSprite = require('gulp-svg-sprite');
-const { svgo } = require('gulp-imagemin');
 const browserSync = require('browser-sync').create();
 
 function browsersync() {
@@ -71,67 +70,133 @@ function html() {
 
 function images() {
   return src(['app/images/**/*.{png,jpg}', '!app/images/**/*.webp'])
-  .pipe(changed('app/images/**/*.{png,jpg}'))
-  .pipe(imagemin([
-    imagemin.mozjpeg({ quality: 70 }),
-    imageminPngquant({ quality: [0.6, 0.7] }),
-    imagemin.svgo(),
-  ],
-  ))
-  .pipe(debug({title: 'img:'}))
-  .pipe(dest('dist/images'))
+    .pipe(changed('app/images/**/*.{png,jpg}'))
+    .pipe(imagemin([
+      imagemin.mozjpeg({
+        quality: 70
+      }),
+      imageminPngquant({
+        quality: [0.6, 0.7]
+      }),
+    ], ))
+    .pipe(debug({
+      title: 'img:'
+    }))
+    .pipe(dest('dist/images'))
 }
+
 function imagesWebp() {
   return src('app/images/**/*.{png,jpg}')
-  .pipe(changed('app/images', {extension: '.webp'}))
-  .pipe(imagemin([
-    imageminWebp({quality: 70}),
-  ]))
-  .pipe(rename({
-    extname: ".webp"
-  }))
-  .pipe(debug({title: 'webp:'}))
-  .pipe(dest('app/images'))
+    .pipe(changed('app/images', {
+      extension: '.webp'
+    }))
+    .pipe(imagemin([
+      imageminWebp({
+        quality: 70
+      }),
+    ]))
+    .pipe(rename({
+      extname: ".webp"
+    }))
+    .pipe(debug({
+      title: 'webp:'
+    }))
+    .pipe(dest('app/images'))
 }
 
 
-function spriteSvg() {
-  return src(['app/images/icons/*.svg'])
+function spriteMono() {
+  return src(['app/images/icons/mono/*.svg'])
     .pipe(svgSprite({
-       mode: {
+      mode: {
         stack: {
-          sprite: "../sprite.svg" 
+          sprite: "../mono/spriteMono.svg"
         },
       },
       shape: {
-        transform: [
-          {
-            svgo: {
-              plugins: [
-                {
-                  inlineStyles: true
+        transform: [{
+          svgo: {
+            plugins: [
+              {
+                inlineStyles: true
+              },
+              {
+                removeViewBox: false
+              },
+              {
+                removeDoctype: true
+              },
+              {
+                removeXMLProcInst: true
+              },
+              {
+                removeUselessStrokeAndFill: false,
+              },
+              {
+                removeXMLNS: true
+              },
+              {
+                removeAttrs: {
+                  attrs: ['class', 'data-name', 'fill', 'stroke'],
                 },
-                {
-                  removeViewBox: false
-                },
-                {
-                  removeDoctype: true
-                },
-                {
-                  removeXMLProcInst: true
-                },
-                {
-                  removeXMLNS: true
-                },
-              ],
-            },
+              },
+            ],
           },
-        ],
-      },    
+        }, ],
+      },
     }))
-    .pipe(debug({title: 'sprite:'}))
+    .pipe(debug({
+      title: 'sprite:'
+    }))
     .pipe(dest('app/images/icons'))
 }
+
+function spriteMulti() {
+  return src(['app/images/icons/multi/*.svg'])
+    .pipe(svgSprite({
+      mode: {
+        stack: {
+          sprite: "../multi/spriteMulti.svg"
+        },
+      },
+      shape: {
+        transform: [{
+          svgo: {
+            plugins: [
+              {
+                inlineStyles: true
+              },
+              {
+                removeViewBox: false
+              },
+              {
+                removeDoctype: true
+              },
+              {
+                removeXMLProcInst: true
+              },
+              {
+                removeUselessStrokeAndFill: false,
+              },
+              {
+                removeXMLNS: true
+              },
+              {
+                removeAttrs: {
+                  attrs: ['class', 'data-name',],
+                },
+              },
+            ],
+          },
+        }, ],
+      },
+    }))
+    .pipe(debug({
+      title: 'sprite:'
+    }))
+    .pipe(dest('app/images/icons'))
+}
+
 
 function build() {
   return src([
@@ -139,7 +204,8 @@ function build() {
       'app/fonts/*.woff2',
       'app/*.html',
       'app/images/**/*.webp',
-      'app/images/icons/sprite.svg',
+      'app/images/icons/mono/spriteMono.svg',
+      'app/images/icons/multi/spriteMulti.svg',
       'app/css/*.min.css',
       'app/js/main.min.js'
     ], {
@@ -149,7 +215,7 @@ function build() {
 }
 
 function completeBuild() {
-  return del(['app/images/icons/sprite.svg']);
+  return del(['app/images/icons/mono/spriteMono.svg', 'app/images/icons/multi/spriteMulti.svg']);
 }
 
 function cleanDist() {
@@ -159,8 +225,8 @@ function cleanDist() {
 function watching() {
   watch(['app/scss/**/*.scss'], styles);
   watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
-  watch(['app/images/**/*', '!app/images/icons/*.svg'], series(images,imagesWebp));
-  watch(['app/images/icons/*.svg', '!app/images/icons/sprite.svg'], series(completeBuild, spriteSvg));
+  watch(['app/images/**/*', '!app/images/icons/*.svg'], series(images, imagesWebp));
+  watch(['app/images/icons/**/*.svg', '!app/images/icons/mono/spriteMono.svg', '!app/images/icons/multi/spriteMulti.svg'], series(completeBuild, spriteMono, spriteMulti));
   watch(['app/html/**/*.html'], html);
 }
 
@@ -171,11 +237,12 @@ exports.watching = watching;
 exports.images = images;
 exports.imagesWebp = imagesWebp;
 exports.html = html;
-exports.spriteSvg = spriteSvg;
+exports.spriteMono = spriteMono;
+exports.spriteMulti = spriteMulti;
 exports.cleanDist = cleanDist;
 exports.build = build;
 exports.completeBuild = completeBuild;
 
 exports.build = series(cleanDist, build, images);
 
-exports.default = series(completeBuild, parallel(styles, scripts, html, images, imagesWebp, spriteSvg, browsersync, watching));
+exports.default = series(completeBuild, parallel(styles, scripts, html, images, imagesWebp, spriteMono, spriteMulti, browsersync, watching));

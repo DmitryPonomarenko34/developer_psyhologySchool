@@ -1,5 +1,9 @@
 .header{
-  padding: 8px 0;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
   background-color: $accent;
   &__inner{
     display: flex;
@@ -29,7 +33,18 @@
     }
   }
   &__list-link{
+    position: relative;
+    display: inline-block;
+    padding: 25px 0;
     color: $title;
+    border-bottom: 2px solid transparent;
     @extend %SourceSansPro-SemiBold;
+    transition: ease border-color 0.3s, ease color 0.3s;
+  }
+  &__list-link--active{
+    border-bottom: 2px solid $bg;
+    border-radius: 2px;
+    transition: ease border-color 0.3s, ease color 0.3s;
+    color: $bg;
   }
 }

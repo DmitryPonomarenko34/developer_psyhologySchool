@@ -7,7 +7,7 @@
   }
   &__inner{
     position: relative;
-    padding: 100px 0;
+    padding: 174px 0 100px;
   }
   &__title{
     margin-bottom: 20px;
@@ -55,12 +55,13 @@
       height: 21px;
       left: 30px;
       @extend %bg;
-      background-image: url('../images/icons/sprite.svg#basket');
+      background-image: url('../images/icons/multi/spriteMulti.svg#basket');
     }
   }
 }
 .countdown_dashboard{
   display: flex;
+  height: 65px;
 }
 
 .dash{
@@ -74,23 +75,4 @@
   line-height: 40px;
   color: $title;
   @extend %SourceSansPro-Bold;
-}
-
-.play{
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background-color: $accent;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  svg{
-    margin-left: 1px;
-    width: 13px;
-    height: 16px;
-  }
 }

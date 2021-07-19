@@ -44,7 +44,7 @@
       width: 24px;
       height: 24px;
       background-repeat: no-repeat;
-      background-image: url('../images/icons/sprite.svg#calendar');
+      background-image: url('../images/icons/multi/spriteMulti.svg#calendar');
     }
     &:not(:last-child){
       margin-right: 10%;
@@ -52,7 +52,7 @@
   }
   &__item-info--list{
     &::before{
-      background-image: url('../images/icons/sprite.svg#list');
+      background-image: url('../images/icons/multi/spriteMulti.svg#list');
     }
   }
   &__item-text{
@@ -120,7 +120,7 @@
       height: 9px;
       width: 100%;
       @extend %bg;
-      background-image: url('../images/icons/sprite.svg#arrow-right');
+      background-image: url('../images/icons/multi/spriteMulti.svg#arrow-right');
     }
   }
   .slick-track{
@@ -145,6 +145,13 @@
    padding: 0;
    border-radius: 50%;
    cursor: pointer;
+  }
+  .slick-disabled{
+    opacity: 0.5;
+    cursor: default;
+    &:hover{
+      
+    }
   }
   .slick-prev{
     order: -1;

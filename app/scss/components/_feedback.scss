@@ -46,14 +46,14 @@
     background-repeat: no-repeat;
   }
   &::before{
-    background-image: url('../images/icons/sprite.svg#quote');
+    background-image: url('../images/icons/multi/spriteMulti.svg#quote');
   }
   &::after{
     top: auto;
     left: auto;
     right: auto;
     bottom: 0px;
-    background-image: url('../images/icons/sprite.svg#quote-rotate');
+    background-image: url('../images/icons/multi/spriteMulti.svg#quote-rotate');
   }
 }
 

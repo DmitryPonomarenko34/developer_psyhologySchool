@@ -52,6 +52,9 @@
     background-color: rgba(47, 55, 148, 0.03);
     transition: ease background-color 0.3s;
     svg{
+      fill: none;
+      stroke: $bg;
+      stroke-width: 2px;
       width: 19px;
       height: 10px;
       transition: ease transform 0.3s;
@@ -70,7 +73,7 @@
   &__list{
     margin-bottom: 40px;
     padding-left: 20px;
-    list-style-image: url('../images/icons/sprite.svg#check');
+    list-style-image: url('../images/icons/multi/spriteMulti.svg#check');
     max-width: 50%;
   }
   &__list-item{

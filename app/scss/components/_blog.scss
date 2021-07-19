@@ -26,14 +26,24 @@
       margin-bottom: 0;
     }
   }
+  &__boxlink{
+    border-radius: 12px;
+    overflow: hidden;
+    margin-right: 40px;
+  }
   &__item-title{
     font-size: 24px;
     line-height: 30px;
     margin-bottom: 12px;
   }
-  &__img{
+  &__article-link{
+    display: block;
     border-radius: 12px;
+    overflow: hidden;
     margin-bottom: 40px;
+  }
+  &__img{
+    width: 100%;
   }
   &__date{
     color: $default;
@@ -50,8 +60,7 @@
   &__box {
   }
   &__thumb-img{
-    margin-right: 40px;
-    border-radius: 12px;
+    width: 100%;
     max-width: 295px;
   }
   &__link{
