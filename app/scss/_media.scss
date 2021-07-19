@@ -99,3 +99,75 @@
     }
   }
 }
+
+@include laptop-L {
+  .header{
+    padding: 15px 0;
+    &::before{
+      display: block;
+    }
+    &__links{
+      margin-left: auto;
+      margin-right: 20px;
+    }
+    &__link{
+      margin-right: 15px;
+    }
+    &__play{
+      left: auto;
+      right: 35%;
+    }
+  }
+  .first{
+    &__inner{
+      padding: 115px 0 60px;
+    }
+  }
+  .menu-btn{
+    order: 1;
+    display: flex;
+  }
+  .menu{
+    position: fixed;
+    padding: 84px 0 15px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    top: -200%;
+    background-color: #fff;
+    transition: ease top 0.3s;
+    &__list{
+      display: block;
+      text-align: center;
+    }
+    &__list-item{
+      +.menu__list-item{
+        margin-left: 0;
+      }
+    }
+    &__list-link{
+      display: block;
+      font-size: 20px;
+    }
+    &--active{
+      top: 0;
+      transition: ease top 0.3s;
+    }
+  }
+}
+
+@include tablet {
+  .header{
+    &__links{
+      justify-content: center;
+      text-align: center;
+      margin: 0;
+    }
+  }
+  .menu{
+    &__list{
+      margin-bottom: 20px;
+    }
+  }
+}

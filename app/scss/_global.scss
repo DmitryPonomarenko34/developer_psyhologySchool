@@ -39,6 +39,12 @@ a{
   max-width: 1400px;
 }
 
+.body{
+  &__lock{
+    overflow: hidden;
+  }
+}
+
 .play{
   width: 72px;
   height: 72px;
@@ -100,3 +106,4 @@ a{
     transform: rotate(360deg);
   }
 }
+
