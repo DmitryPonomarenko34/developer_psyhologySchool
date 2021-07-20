@@ -10,10 +10,12 @@
     flex-wrap: wrap;
   }
   &__item{
-    max-width: 50%;
+    max-width: 45%;
     text-align: center;
     margin-bottom: 50px;
+    margin-right: 2%;
     &:nth-child(2n){
+      margin-right: 0;
       .benefits__item-box{
         &::before{
           transform: rotate(186deg);

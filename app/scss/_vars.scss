@@ -71,7 +71,7 @@ $bg: #2F3794;
 }
 
 @mixin laptop-L {
-  @media (max-width: 1200px) { @content; }
+  @media (max-width: 1220px) { @content; }
 }
 @mixin laptop {
   @media (max-width: 992px) { @content; }

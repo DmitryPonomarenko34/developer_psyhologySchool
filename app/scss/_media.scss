@@ -113,14 +113,14 @@
     &__link{
       margin-right: 15px;
     }
-    &__play{
-      left: auto;
-      right: 35%;
-    }
   }
   .first{
     &__inner{
       padding: 115px 0 60px;
+    }
+    &__play{
+      left: auto;
+      right: 35%;
     }
   }
   .menu-btn{
@@ -155,6 +155,41 @@
       transition: ease top 0.3s;
     }
   }
+  .benefits{
+    padding: 60px 0;
+    &__item{
+      margin-bottom: 25px;
+    }
+  }
+}
+
+@include laptop{
+  .first{
+    &__container-fluid{
+      background-image: none !important;
+    }
+    &__play{
+      top: 235px;
+      right: 0;
+    }
+  }
+}
+
+@include tablet-L {  
+  %title{
+    margin-bottom: 20px;
+    font-size: 40px;
+    line-height: 35px;
+  }
+  .benefits{
+    &__inner{
+      display: block;
+    }
+    &__item{
+      max-width: none;
+      margin-right: 0;
+    }
+  }
 }
 
 @include tablet {
@@ -168,6 +203,51 @@
   .menu{
     &__list{
       margin-bottom: 20px;
+    }
+  }
+}
+
+@include portrait-phones{
+  .first{
+    &__play{
+      display: none;
+    }
+    &__title{
+      max-width: none;
+      font-size: 35px;
+      line-height: 46px;
+    }
+    &__text{
+      margin-bottom: 30px;
+    }
+    &__box{
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@include mobile-L {
+  .first{
+    &__info{
+      display: block;
+      max-width: none;
+    }
+    &__info-text{
+      margin-bottom: 10px;
+    }
+    &__box{
+      display: block;
+    }
+    &__price{
+      margin-bottom: 15px;
+    }
+  }
+  .dash{
+    justify-content: flex-start;
+    &_title{
+      display: block;
+      width: 100%;
+      text-align: start;
     }
   }
 }

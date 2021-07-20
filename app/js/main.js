@@ -28,6 +28,9 @@ $(function () {
 		
 		$('.menu__list-link').removeClass('menu__list-link--active');
 		$(this).addClass('menu__list-link--active');
+		$('.menu').removeClass('menu--active');
+		$('.menu-btn').removeClass('menu-btn--active');
+		$('body').removeClass('body__lock');
 
 		var id = $(this).attr('href'),
 			top = $(id).offset().top;
