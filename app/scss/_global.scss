@@ -8,6 +8,12 @@ body {
   line-height: 24px;
   color: $default;
   @extend %SourceSansPro-Regular;
+  background-color: #f2f2f2;
+}
+
+a{
+  font-size: 15px;
+  @extend %SourceSansPro-SemiBold;
 }
 
 .main {
@@ -22,14 +28,82 @@ body {
   min-height: 100%;
 }
 
-.container-add {
+.container-fluid{
+  max-width: 1920px;
   margin: 0 auto;
-  padding: 0 15px;
-  max-width: 1400px;
 }
 
 .container {
   margin: 0 auto;
   padding: 0 15px;
-  max-width: 1200px;
+  max-width: 1400px;
 }
+
+.body{
+  &__lock{
+    overflow: hidden;
+  }
+}
+
+.play{
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: $accent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  svg{
+    fill: $bg;
+    margin-left: 1px;
+    width: 13px;
+    height: 16px;
+  }
+}
+  
+.preloader {
+  display: inline-flex;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.preloader div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid $bg;
+  border-radius: 50%;
+  animation: preloader 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: $bg transparent transparent transparent;
+}
+.preloader div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.preloader div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.preloader div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

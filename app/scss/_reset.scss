@@ -8,10 +8,11 @@ html {
   box-sizing: inherit;
 }
 
-ul[class],
+ul,
 ol[class] {
   padding: 0;
   margin: 0;
+  list-style: none;
 }
 
 body,
@@ -22,7 +23,7 @@ h4,
 h5,
 h6,
 p,
-ul[class],
+ul,
 ol[class],
 li,
 figure,
@@ -31,10 +32,6 @@ blockquote,
 dl,
 dd {
   margin: 0;
-}
-
-ul[class] {
-  list-style: none;
 }
 
 img {

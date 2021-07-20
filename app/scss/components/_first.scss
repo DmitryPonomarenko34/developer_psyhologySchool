@@ -1,0 +1,78 @@
+.first {
+  background-color: rgba(47, 55, 148, 0.15);
+  &__container-fluid{
+    background-position: right bottom;
+    background-size: 50%;
+    background-repeat: no-repeat;
+  }
+  &__inner{
+    position: relative;
+    padding: 174px 0 100px;
+  }
+  &__title{
+    margin-bottom: 20px;
+    max-width: 605px;
+    font-size: 48px;
+    line-height: 64px;
+    @extend %SourceSansPro-SemiBold;
+    color: $title;
+  }
+  &__text{
+    margin-bottom: 60px;
+    max-width: 480px;
+  }
+  &__box{
+    max-width: 480px;
+    margin-bottom: 50px;
+  }
+  &__info{
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
+  }
+  &__info-text{
+  }
+}
+
+.info-box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__price{
+    font-size: 30px;
+    @extend %SourceSansPro-SemiBold;
+    color: $title;
+  }
+  &__link{
+    position: relative;
+    padding-left: 57px;
+    @extend %link;
+    &:before{
+      content: '';
+      position: absolute;
+      top: 14px;
+      width: 17px;
+      height: 21px;
+      left: 30px;
+      @extend %bg;
+      background-image: url('../images/icons/multi/spriteMulti.svg#basket');
+    }
+  }
+}
+.countdown_dashboard{
+  display: flex;
+  height: 65px;
+}
+
+.dash{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.digit{
+  font-size: 30px;
+  line-height: 40px;
+  color: $title;
+  @extend %SourceSansPro-Bold;
+}

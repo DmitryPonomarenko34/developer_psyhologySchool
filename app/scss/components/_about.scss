@@ -1,0 +1,29 @@
+.about{
+  padding: 80px 0;
+  &__title{
+    @extend %title;
+  }
+  &__inner{
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    justify-content: center;
+    min-height: 600px;
+    padding: 40px;
+    background-image: url('../images/content/school-bg.jpg');
+    @extend %bg;
+  }
+  &__text{
+    font-size: 24px;
+    margin-bottom: 20px;
+    line-height: 36px;
+    color: $title;
+    max-width: 710px;
+    @extend %SourceSansPro-Regular;
+  }
+  &__link{
+    font-size: 24px;
+    @extend %accent-link;
+  }
+}
+
