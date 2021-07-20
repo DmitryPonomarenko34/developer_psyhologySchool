@@ -48,6 +48,7 @@
     align-items: center;
     width: 56px;
     height: 56px;
+    flex-shrink: 0;
     border-radius: 50%;
     background-color: rgba(47, 55, 148, 0.03);
     transition: ease background-color 0.3s;
